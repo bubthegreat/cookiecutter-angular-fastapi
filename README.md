@@ -17,16 +17,32 @@ You can look at that and see how the CI/CD jobs ran and how the project actually
 3. Follow the prompts for the project name.  Right now it only supports python snake_case or it'll break the python packaging.
 
 ```
-PS C:\Users\bubth\Development\test> cookiecutter https://github.com/bubthegreat/cookiecutter-angular-fastapi      project_name [Angular FastAPI]: test1
-project_description [This is a basic Angular FastAPI implementation!]: test1 description
-PS C:\Users\bubth\Development\test>
+PS C:\Users\bubth\Development\test> cookiecutter https://github.com/bubthegreat/cookiecutter-angular-fastapi
+You've downloaded C:\Users\bubth\.cookiecutters\cookiecutter-angular-fastapi before. Is it okay to delete and re-download it? [yes]:
+project_name [Angular FastAPI]: Test Cookiecutter
+project_slug [test-cookiecutter]:
+angular_slug [app-test-cookiecutter]:
+python_slug [api_test_cookiecutter]:
+project_description [This is a basic Angular FastAPI implementation!]:
+PS C:\Users\bubth\Development\test>   
+```
+
+You should now see the project you made:
+
+```
+PS C:\Users\bubth\Development\test> ls
+Directory: C:\Users\bubth\Development\test
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        10/6/2019   1:47 AM                test-cookiecutter
+PS C:\Users\bubth\Development\test>   
 ```
 
 ### Installing the frontend
 
 ```
-PS C:\Users\bubth\Development\test\test1> cd .\test1-frontend\
-PS C:\Users\bubth\Development\test\test1\test1-frontend> npm install . 
+PS C:\Users\bubth\Development\test> cd .\test-cookiecutter\app-test-cookiecutter\ 
+PS C:\Users\bubth\Development\test\test-cookiecutter\app-test-cookiecutter\> npm install . 
 ```
 
 ### Running the frontend
@@ -44,15 +60,15 @@ Our API backend is FastAPI, which does automatic swagger docs for you!  Swagger 
 ### Installing the backend
 
 ```
-(venv) PS C:\Users\bubth\Development\test\test1\test1-frontend> cd ..\test1_backend\
-(venv) PS C:\Users\bubth\Development\test\test1\test1_backend> python -m venv venv
-(venv) PS C:\Users\bubth\Development\test\test1\test1_backend> .\venv\Scripts\Activate.ps1
-(venv) PS C:\Users\bubth\Development\test\test1\test1_backend> pip install .
-Processing c:\users\bubth\development\test\test1\test1_backend
+(venv) PS C:\Users\bubth\Development\test\> cd .\test-cookiecutter\api_test_cookiecutter\ 
+(venv) PS C:\Users\bubth\Development\test\test-cookiecutter\api_test_cookiecutter> python -m venv venv
+(venv) PS C:\Users\bubth\Development\test\test-cookiecutter\api_test_cookiecutter> .\venv\Scripts\Activate.ps1
+(venv) PS C:\Users\bubth\Development\test\test-cookiecutter\api_test_cookiecutter> pip install .
+Processing c:\users\bubth\development\test\test-cookiecutter\api_test_cookiecutter
 
     *** SNIP INSTALLATION ***
 
-(venv) PS C:\Users\bubth\Development\test\test1\test1_backend>
+(venv) PS C:\Users\bubth\Development\test\test-cookiecutter\api_test_cookiecutter>
 ```
 
 ### Running the backend
@@ -60,7 +76,7 @@ Processing c:\users\bubth\development\test\test1\test1_backend
 To run the backend API, you should be able to run the app.py:
 
 ```
-(venv) PS C:\Users\bubth\Development\test\test1\test1_backend> python .\test1_backend\app.py
+(venv) PS C:\Users\bubth\Development\test\test-cookiecutter\api_test_cookiecutter> python .\test1_backend\app.py
 INFO: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 INFO: Started reloader process [11436]
 INFO: Started server process [2248]

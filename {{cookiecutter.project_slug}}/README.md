@@ -3,6 +3,9 @@
 This is a cookie cutter template created from https://github.com/bubthegreat/cookiecutter-angular-fastapi for an angular frontend and a FastAPI backend!  Basic instructions are below for running your dev locally to get up and
 running!  Examples for services and API calls are still in progress!
 
+
+## Angular Frontend
+
 ### Installing the frontend
 
 ```
@@ -18,7 +21,7 @@ To run the frontend, you'll run the command:
 
 from the frontend directory.  If you navigate to http://localhost:4200 you should see a generic welcome page!
 
-## Backend
+## FastAPI Backend
 
 Our API backend is FastAPI, which does automatic swagger docs for you!  Swagger docs will be available at http://localhost:8000/docs when running on your localhost so you can see what they look like.
 
