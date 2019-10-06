@@ -1,15 +1,15 @@
 
 backend-test:
-  image: {{cookiecutter.project_name}}-backend
+  image: {{cookiecutter.project_slug}}-backend
   script:
-    - cd {{cookiecutter.project_name}}-backend
+    - cd {{cookiecutter.project_slug}}-backend
     - pip install .
     - pytest .
 
 frontend-test:
-  image: {{cookiecutter.project_name}}-frontend
+  image: {{cookiecutter.project_slug}}-frontend
   script:
-    - cd {{cookiecutter.project_name}}-frontend
+    - cd {{cookiecutter.project_slug}}-frontend
     - npm install .
     - ng test --watch=false --browsers=ChromeHeadless
 
