@@ -38,6 +38,10 @@ d-----        10/6/2019   1:47 AM                test-cookiecutter
 PS C:\Users\bubth\Development\test>   
 ```
 
+## Frontend
+
+Our frontend is Angular, reachable at http://localhost:4200 when the test server is up - but deployments to production are beyond the scope of this cookiecutter template.
+
 ### Installing the frontend
 
 ```
@@ -86,5 +90,3 @@ INFO: Waiting for application startup.
 If you navigate to http://localhost:8000/status you should get something similar to this:
 
 `{"status":"UP","uptime":"52s","server_time":"2019-10-05 23:27:54.505806"}`
-
-## 
