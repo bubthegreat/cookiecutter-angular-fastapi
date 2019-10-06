@@ -1,4 +1,4 @@
-"""Setup configuration and dependencies for the Crypto Logger."""
+"""Setup configuration and dependencies for the {{cookiecutter.project_name}} backend."""
 
 import codecs
 import os
@@ -16,11 +16,11 @@ PACKAGES = setuptools.find_packages(
 REQUIREMENTS = REQUIREMENTS = [requirement for requirement in open('requirements.txt').readlines()]
 
 setuptools.setup(
-    name='{{cookiecutter.project_name}}-backend',
+    name='{{cookiecutter.project_name}}_backend',
     version="0.0.0",
     description='{{cookiecutter.project_description}}',
     packages=PACKAGES,
-    python_requires='>=3.6.8',
+    python_requires='>=3.7.0',
     entry_points={'console_scripts': COMMANDS},
     install_requires=REQUIREMENTS,
 )

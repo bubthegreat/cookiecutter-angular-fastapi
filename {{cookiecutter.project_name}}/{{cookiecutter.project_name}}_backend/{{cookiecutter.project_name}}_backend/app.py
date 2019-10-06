@@ -1,4 +1,4 @@
-"""Main app for {{cookiecutter.project_name}}-backend."""
+"""Main app for {{cookiecutter.project_name}}_backend."""
 
 import asyncio
 import datetime
@@ -49,7 +49,7 @@ async def return_prices() -> JSONResponse:
 
 def main():
     """Run through uvicorn when run."""
-    uvicorn.run("{{cookiecutter.project_name}}-backend:app", host='0.0.0.0', port=8000, reload=True)
+    uvicorn.run("{{cookiecutter.project_name}}_backend:app", host='0.0.0.0', port=8000, reload=True)
 
 if __name__ == "__main__":
     main()
