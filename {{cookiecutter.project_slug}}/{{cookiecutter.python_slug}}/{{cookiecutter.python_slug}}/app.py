@@ -34,8 +34,8 @@ async def shutdown():
 
 
 @app.get("/status")
-async def return_prices() -> JSONResponse:
-    """Get market price for multiple coins.
+async def return_status() -> JSONResponse:
+    """Get basic server status information.
 
     :returns status_info: JSON response for our status info.
     """
