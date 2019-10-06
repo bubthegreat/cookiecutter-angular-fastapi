@@ -40,8 +40,8 @@ async def return_prices() -> JSONResponse:
     :returns status_info: JSON response for our status info.
     """
     status_info = {
-        'status': 'UP',
-        'uptime': time.time() - START_TIME,
+        'status': "UP",
+        'uptime': f"{time.time() - START_TIME:.0f}s",
         'server_time': str(datetime.datetime.now()),
     }
     return JSONResponse(status_info)
