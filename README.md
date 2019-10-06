@@ -2,6 +2,10 @@
 
 This project requires nodejs 10.x+ and python3.7+, mostly because I don't want to maintain something older.  Get with the times people! :D
 
+The most basic example of what this produces is at https://github.com/bubthegreat/test-cookiecutter
+
+You can look at that and see how the CI/CD jobs ran and how the project actually ended up generating.
+
 1. Install cookiecutter
 
 `pip install --user cookiecutter`
