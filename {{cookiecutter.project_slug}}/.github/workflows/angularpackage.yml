@@ -1,4 +1,4 @@
-name: Node CI
+name: Angular Testing
 
 on: [push]
 
@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ '{{' }} matrix.node-version {{ '}}' }}
-    - name: npm install, build, and test
+    - name: npm install, and test
       run: |
         cd {{ cookiecutter.angular_slug }}
         npm install
