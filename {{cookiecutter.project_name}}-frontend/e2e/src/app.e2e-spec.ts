@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('frontend app is running!');
+    expect(page.getTitleText()).toEqual('{{cookiecutter.project_name}} app is running!');
   });
 
   afterEach(async () => {
