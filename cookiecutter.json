@@ -1,6 +1,7 @@
 {
     "project_name": "Angular FastAPI",
-    "project_slug": "app-{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
+    "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
+    "angular_slug": "app-{{ cookiecutter.project_slug }}",
     "python_slug": "api_{{ cookiecutter.project_slug|replace('-', '_') }}",
     "project_description": "This is a basic Angular FastAPI implementation!"
 }
