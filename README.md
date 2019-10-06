@@ -1,6 +1,10 @@
 # Angular FastAPI
 I use Angular and FastAPI for my personal projects, and I'm tired of setting them up from scratch, so here's the cookiecutter project that does it for me!  This will give you a basic cAngular frontend with a FastAPI backend.
 
+It looks like this if we did it right!
+
+![Frontend](assets/frontend.png)
+
 ### Angular Frontend
 The angular frontend has a few things already defined that should serve as good reference starting points:
 * A service that leverages the backend API
