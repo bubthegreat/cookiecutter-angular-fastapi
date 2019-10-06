@@ -2,7 +2,7 @@
 
 This project requires nodejs 10.x+ and python3.7+, mostly because I don't want to maintain something older.  Get with the times people! :D
 
-The most basic example of what this produces is at https://github.com/bubthegreat/test-cookiecutter
+The most basic example of what this produces is at https://github.com/bubthegreat/angular-fastapi
 
 You can look at that and see how the CI/CD jobs ran and how the project actually ended up generating.
 
@@ -19,10 +19,10 @@ You can look at that and see how the CI/CD jobs ran and how the project actually
 ```
 PS C:\Users\bubth\Development\test> cookiecutter https://github.com/bubthegreat/cookiecutter-angular-fastapi
 You've downloaded C:\Users\bubth\.cookiecutters\cookiecutter-angular-fastapi before. Is it okay to delete and re-download it? [yes]:
-project_name [Angular FastAPI]: Test Cookiecutter
-project_slug [test-cookiecutter]:
-angular_slug [app-test-cookiecutter]:
-python_slug [api_test_cookiecutter]:
+project_name [Angular FastAPI]:
+project_slug [angular-fastapi]:
+angular_slug [app-angular-fastapi]:
+python_slug [api_angular_fastapi]:
 project_description [This is a basic Angular FastAPI implementation!]:
 PS C:\Users\bubth\Development\test>   
 ```
@@ -34,7 +34,7 @@ PS C:\Users\bubth\Development\test> ls
 Directory: C:\Users\bubth\Development\test
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
-d-----        10/6/2019   1:47 AM                test-cookiecutter
+d-----        10/6/2019   1:47 AM                angular-fastapi
 PS C:\Users\bubth\Development\test>   
 ```
 
@@ -45,8 +45,8 @@ Our frontend is Angular, reachable at http://localhost:4200 when the test server
 ### Installing the frontend
 
 ```
-PS C:\Users\bubth\Development\test> cd .\test-cookiecutter\app-test-cookiecutter\ 
-PS C:\Users\bubth\Development\test\test-cookiecutter\app-test-cookiecutter\> npm install . 
+PS C:\Users\bubth\Development\test> cd .\angular-fastapi\app-angular-fastapi\ 
+PS C:\Users\bubth\Development\test\angular-fastapi\app-angular-fastapi\> npm install . 
 ```
 
 ### Running the frontend
@@ -64,15 +64,15 @@ Our API backend is FastAPI, which does automatic swagger docs for you!  Swagger 
 ### Installing the backend
 
 ```
-(venv) PS C:\Users\bubth\Development\test\> cd .\test-cookiecutter\api_test_cookiecutter\ 
-(venv) PS C:\Users\bubth\Development\test\test-cookiecutter\api_test_cookiecutter> python -m venv venv
-(venv) PS C:\Users\bubth\Development\test\test-cookiecutter\api_test_cookiecutter> .\venv\Scripts\Activate.ps1
-(venv) PS C:\Users\bubth\Development\test\test-cookiecutter\api_test_cookiecutter> pip install .
-Processing c:\users\bubth\development\test\test-cookiecutter\api_test_cookiecutter
+(venv) PS C:\Users\bubth\Development\test\> cd .\angular-fastapi\api_angular_fastapi\ 
+(venv) PS C:\Users\bubth\Development\test\angular-fastapi\api_angular_fastapi> python -m venv venv
+(venv) PS C:\Users\bubth\Development\test\angular-fastapi\api_angular_fastapi> .\venv\Scripts\Activate.ps1
+(venv) PS C:\Users\bubth\Development\test\angular-fastapi\api_angular_fastapi> pip install .
+Processing c:\users\bubth\development\test\angular-fastapi\api_angular_fastapi
 
     *** SNIP INSTALLATION ***
 
-(venv) PS C:\Users\bubth\Development\test\test-cookiecutter\api_test_cookiecutter>
+(venv) PS C:\Users\bubth\Development\test\angular-fastapi\api_angular_fastapi>
 ```
 
 ### Running the backend
@@ -80,7 +80,7 @@ Processing c:\users\bubth\development\test\test-cookiecutter\api_test_cookiecutt
 To run the backend API, you should be able to run the app.py:
 
 ```
-(venv) PS C:\Users\bubth\Development\test\test-cookiecutter\api_test_cookiecutter> python .\test1_backend\app.py
+(venv) PS C:\Users\bubth\Development\test\angular-fastapi\api_angular_fastapi> python .\test1_backend\app.py
 INFO: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 INFO: Started reloader process [11436]
 INFO: Started server process [2248]

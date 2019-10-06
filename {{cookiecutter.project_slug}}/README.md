@@ -6,11 +6,13 @@ running!  Examples for services and API calls are still in progress!
 
 ## Angular Frontend
 
+Our frontend is Angular, reachable at http://localhost:4200 when the test server is up - but deployments to production are beyond the scope of this cookiecutter template.
+
 ### Installing the frontend
 
 ```
-PS C:\Users\bubth\Development\test\test1> cd .\test1-frontend\
-PS C:\Users\bubth\Development\test\test1\test1-frontend> npm install . 
+PS C:\Users\bubth\Development\test> cd .\angular-fastapi\app-angular-fastapi\ 
+PS C:\Users\bubth\Development\test\angular-fastapi\app-angular-fastapi\> npm install . 
 ```
 
 ### Running the frontend
@@ -28,15 +30,15 @@ Our API backend is FastAPI, which does automatic swagger docs for you!  Swagger 
 ### Installing the backend
 
 ```
-(venv) PS C:\Users\bubth\Development\test\test1\test1-frontend> cd ..\test1_backend\
-(venv) PS C:\Users\bubth\Development\test\test1\test1_backend> python -m venv venv
-(venv) PS C:\Users\bubth\Development\test\test1\test1_backend> .\venv\Scripts\Activate.ps1
-(venv) PS C:\Users\bubth\Development\test\test1\test1_backend> pip install .
-Processing c:\users\bubth\development\test\test1\test1_backend
+(venv) PS C:\Users\bubth\Development\test\> cd .\angular-fastapi\api_angular_fastapi\ 
+(venv) PS C:\Users\bubth\Development\test\angular-fastapi\api_angular_fastapi> python -m venv venv
+(venv) PS C:\Users\bubth\Development\test\angular-fastapi\api_angular_fastapi> .\venv\Scripts\Activate.ps1
+(venv) PS C:\Users\bubth\Development\test\angular-fastapi\api_angular_fastapi> pip install .
+Processing c:\users\bubth\development\test\angular-fastapi\api_angular_fastapi
 
     *** SNIP INSTALLATION ***
 
-(venv) PS C:\Users\bubth\Development\test\test1\test1_backend>
+(venv) PS C:\Users\bubth\Development\test\angular-fastapi\api_angular_fastapi>
 ```
 
 ### Running the backend
@@ -44,7 +46,7 @@ Processing c:\users\bubth\development\test\test1\test1_backend
 To run the backend API, you should be able to run the app.py:
 
 ```
-(venv) PS C:\Users\bubth\Development\test\test1\test1_backend> python .\test1_backend\app.py
+(venv) PS C:\Users\bubth\Development\test\angular-fastapi\api_angular_fastapi> python .\test1_backend\app.py
 INFO: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 INFO: Started reloader process [11436]
 INFO: Started server process [2248]
