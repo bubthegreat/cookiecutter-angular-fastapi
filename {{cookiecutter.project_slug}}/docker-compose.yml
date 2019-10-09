@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-    {{cookiecutter.python_slug}}:
-        image: {{cookiecutter.python_slug}}
+    {{cookiecutter.api_slug}}:
+        image: {{cookiecutter.api_slug}}
         build:
             context: ./{{cookiecutter.python_slug}}
             dockerfile: Dockerfile
@@ -14,8 +14,6 @@ services:
         build:
             context: ./{{cookiecutter.angular_slug}}
             dockerfile: Dockerfile
-        depends_on:
-            - api-crypto
         command: ng serve --host 0.0.0.0 --disable-host-check
         ports:
             - 4200:4200
