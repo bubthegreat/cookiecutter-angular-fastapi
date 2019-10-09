@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StatusComponent } from './status.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ApiService } from '../api.service';
 
 describe('StatusComponent', () => {
   let component: StatusComponent;
@@ -8,7 +10,9 @@ describe('StatusComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StatusComponent ]
+      declarations: [ StatusComponent ],
+      imports: [ HttpClientTestingModule ],
+      providers: [ ApiService ],
     })
     .compileComponents();
   }));
