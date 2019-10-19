@@ -1,6 +1,7 @@
 version: '3'
 
 services:
+    # Fast API service
     {{cookiecutter.api_slug}}:
         image: {{cookiecutter.api_slug}}
         build:
@@ -9,6 +10,7 @@ services:
         ports:
             - 8000:8000
 
+    # Angular service
     {{cookiecutter.angular_slug}}:
         image: {{cookiecutter.angular_slug}}
         build:
@@ -17,3 +19,23 @@ services:
         command: ng serve --host 0.0.0.0 --disable-host-check
         ports:
             - 4200:4200
+
+    # Redis service for redis things.
+    {{ cookiecutter.redis_hostname }}:
+        image: redis
+        ports:
+            - "6379:6379"
+        volumes:
+            - {{ cookiecutter.redis_volume }}:/data
+
+    # Postgres service for postgres things.
+    {{ cookiecutter.postgres_hostname }}:
+        image: postgres
+        ports:
+            - "5432:5432"
+        volumes:
+            - {{ cookiecutter.postgres_volume }}:/var/lib/postgresql
+
+volumes:
+    {{ cookiecutter.redis_volume }}:
+    {{ cookiecutter.postgres_volume }}:

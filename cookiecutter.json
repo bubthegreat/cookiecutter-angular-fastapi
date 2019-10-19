@@ -4,5 +4,9 @@
     "angular_slug": "app-{{ cookiecutter.project_slug }}",
     "api_slug": "api-{{ cookiecutter.project_slug }}",
     "python_slug": "{{ cookiecutter.api_slug|replace('-', '_') }}",
-    "project_description": "This is a basic Angular FastAPI implementation!"
+    "project_description": "This is a basic Angular FastAPI implementation!",
+    "redis_hostname": "redis-{{ cookiecutter.project_slug }}",
+    "redis_volume": "{{ cookiecutter.redis_hostname }}-data",
+    "postgres_hostname": "postgres-{{ cookiecutter.project_slug }}",
+    "postgres_volume": "{{ cookiecutter.redis_hostname }}-data"
 }
