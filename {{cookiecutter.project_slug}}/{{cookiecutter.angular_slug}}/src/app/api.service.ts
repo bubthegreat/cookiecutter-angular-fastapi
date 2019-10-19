@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { IStatus } from './istatus';
 
 
-const baseAPIURL = 'http://localhost:8000/'
+const baseAPIURL = 'http://{{ cookiecutter.api_slug }}:8000/'
 const statusURL = baseAPIURL + 'status'
 
 
