@@ -23,14 +23,14 @@ async def startup():
     """Perform startup activities."""
     # If you have any startup activities that need to be defined,
     # define them here.
-    pass
+    logger.info("Started application.")
 
 @app.on_event("shutdown")
 async def shutdown():
     """Perform shutdown activities."""
     # If you have any shutdown activities that need to be defined,
     # define them here.
-    pass
+    logger.info("Application has shut down.")
 
 
 @app.get("/status")
@@ -39,6 +39,7 @@ async def return_status() -> JSONResponse:
 
     :returns status_info: JSON response for our status info.
     """
+    logger.info("/status endpoint called.")
     status_info = {
         'status': "UP",
         'uptime': f"{time.time() - START_TIME:.0f}s",
