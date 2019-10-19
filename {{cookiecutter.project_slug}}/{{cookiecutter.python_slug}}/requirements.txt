@@ -1,4 +1,6 @@
 fastapi
 pytest
+pydantic
+redis
 uvicorn
 email-validator
