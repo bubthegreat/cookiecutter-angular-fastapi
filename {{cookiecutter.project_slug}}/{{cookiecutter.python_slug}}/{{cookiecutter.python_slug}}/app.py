@@ -47,6 +47,7 @@ async def return_key(key: str) -> str:
     :return result: Value from the redis key store.
     
     """
+    logger.debug(f"REDIS: Attempting to get key {key}")
     redis_future = POOL_EXECUTOR.submit(REDIS.get, key)
     result = await asyncio.wrap_future(redis_future)
     return result
@@ -61,6 +62,7 @@ async def set_key(key: str, value: str) -> bool:
 
     :return result: Bool indicating success or failure.
     """
+    logger.debug(f"REDIS: Attempting to set key {key} to value {value}")
     redis_future = POOL_EXECUTOR.submit(REDIS.set, *(key, value))
     result = await asyncio.wrap_future(redis_future)
     return result
