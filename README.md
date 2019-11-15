@@ -5,6 +5,10 @@ It looks like this if we did it right!
 
 ![Frontend](assets/frontend.png)
 
+## TODOS
+* Implement authentication with JWT
+* Implement security.
+
 ### Angular Frontend
 The angular frontend has a few things already defined that should serve as good reference starting points:
 * A service that leverages the backend API
