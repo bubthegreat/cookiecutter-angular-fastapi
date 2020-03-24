@@ -1,0 +1,11 @@
+{% raw -%}
+<mat-card *ngIf="user">
+    <mat-card-title>
+        {{user.firstName | titlecase}} {{user.lastName | titlecase}}
+    </mat-card-title>
+    <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+    <mat-card-content>
+        {{user.aboutMe}}
+    </mat-card-content>
+</mat-card>
+{%- endraw %}

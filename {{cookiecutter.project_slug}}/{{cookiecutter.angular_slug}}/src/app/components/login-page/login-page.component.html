@@ -1,0 +1,42 @@
+{% raw -%}
+<mat-card align='center'>
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-content>
+    <div class="example-container">
+      <form [formGroup]="loginForm" required (keyup.enter)="doLogin()">
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type='password' formControlName="password">
+        </mat-form-field>
+      </form>
+    </div>
+    <div *ngIf="loginForm.invalid && (loginForm.dirty || loginForm.touched)">
+      <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+        <mat-error *ngIf="username.errors?.minlength">Minimum username length not met. {{username.value.length}} / {{minEmailLen}}</mat-error>
+        <mat-error *ngIf="username.errors?.email">Invalid username: must be email address.</mat-error>
+        <mat-error *ngIf="username.errors?.required">Username is required.</mat-error>
+        <mat-error *ngIf="username.errors?.maxLength">Username can't be more than {{maxEmailLen}} characters.</mat-error>
+      </div>
+      <!-- <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+        <mat-error *ngIf="password.errors?.minlength">Password must be at least {{minPassLen}} characters. {{password.value.length}} / {{minPassLen}}</mat-error>
+        <mat-error *ngIf="password.errors?.minPassNum">Must have at least one number.</mat-error>
+        <mat-error *ngIf="password.errors?.minPassUpper">Must have at least one upper case letters.</mat-error>
+        <mat-error *ngIf="password.errors?.minPassSpec">Must include at least one special character:  {{requiredSpecialCharsString}}</mat-error>
+        <mat-error *ngIf="password.errors?.required">Password is required.</mat-error>
+      </div> -->
+    </div>
+    <button mat-raised-button
+    (click)="doLogin()"
+    [disabled]="!loginForm.invalid && (loginForm.dirty || loginForm.touched)? false : true"
+    >Submit</button>
+    <button mat-raised-button routerLink="/register/">Register</button>
+  </mat-card-content>
+  <mat-card-footer>
+  </mat-card-footer>
+</mat-card>
+{%- endraw %}

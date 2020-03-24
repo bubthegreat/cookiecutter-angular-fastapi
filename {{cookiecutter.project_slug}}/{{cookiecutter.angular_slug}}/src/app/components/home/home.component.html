@@ -1,0 +1,8 @@
+
+<div *ngIf="loggedIn">
+  Hooray you got in!
+  <app-status></app-status>
+</div>
+<div *ngIf="!loggedIn">
+  <app-login-page></app-login-page>
+</div>

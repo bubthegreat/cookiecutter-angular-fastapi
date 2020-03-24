@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-button routerLink="/"><h2>{{cookiecutter.project_name}}</h2></button>
+        <span class="fill-middle-spacer"></span>
+        <button mat-button></button>
+    <button mat-button [matMenuTriggerFor]="menu">
+        <div class='icon' >
+            <mat-icon inline="true">account_circle</mat-icon>
+        </div>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/">Home</button>
+        <button mat-menu-item (click)="doProfileAction()">Profile</button>
+        <button mat-menu-item routerLink="/api">API</button>
+        <button mat-menu-item (click)="doUserAuthAction()">{% raw -%}{{authAction}}{%- endraw %}</button>
+    </mat-menu>
+    </mat-toolbar-row>
+</mat-toolbar>

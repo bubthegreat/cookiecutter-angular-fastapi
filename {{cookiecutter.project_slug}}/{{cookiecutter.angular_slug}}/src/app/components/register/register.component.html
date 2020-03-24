@@ -1,0 +1,52 @@
+{% raw -%}
+<mat-card align='center'>
+    <mat-card-title>Register</mat-card-title>
+    <mat-card-content>
+      <div class="example-container">
+        <form [formGroup]="registrationForm" required (keydown.enter)="doRegister()">
+          <mat-form-field appearance="fill">
+            <mat-label>username</mat-label>
+            <input matInput formControlName="username">
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput type='password' formControlName="password1">
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="fill">
+            <mat-label>Repeat Password</mat-label>
+            <input matInput type='password' formControlName="password2">
+          </mat-form-field>
+        </form>
+      </div>
+      <div *ngIf="registrationForm.invalid && (registrationForm.dirty || registrationForm.touched)">
+        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+          <mat-error *ngIf="username.errors?.minlength">Minimum username length not met. {{username.value.length}} / {{minEmailLen}}</mat-error>
+          <mat-error *ngIf="username.errors?.email">Invalid email address.</mat-error>
+          <mat-error *ngIf="username.errors?.required">username is required.</mat-error>
+          <mat-error *ngIf="username.errors?.maxLength">username can't be more than {{maxEmailLen}} characters.</mat-error>
+        </div>
+        <div *ngIf="password1.invalid && (password1.dirty || password1.touched)" class="alert alert-danger">
+          <mat-error *ngIf="password1.errors?.minlength">Password must be at least {{minPassLen}} characters. {{password1.value.length}} / {{minPassLen}}</mat-error>
+          <mat-error *ngIf="password1.errors?.minPassNum">Must have at least one number.</mat-error>
+          <mat-error *ngIf="password1.errors?.minPassUpper">Must have at least one upper case letters.</mat-error>
+          <mat-error *ngIf="password1.errors?.minPassSpec">Must include at least one special character:  {{requiredSpecialCharsString}}</mat-error>
+          <mat-error *ngIf="password1.errors?.required">Password is required.</mat-error>
+        </div>
+        <div *ngIf="password2.invalid && (password2.dirty || password2.touched)" class="alert alert-danger">
+          <mat-error *ngIf="password2.errors?.required">Confirmation password is required.</mat-error>
+          <mat-error *ngIf="password2.errors?.passwordsNoMatchy">Passwords must match.</mat-error>
+        </div>
+
+      </div>
+      <button mat-raised-button
+      (click)="doRegister()"
+      [disabled]="!registrationForm.invalid && (registrationForm.dirty || registrationForm.touched)? false : true"
+      >Submit</button>
+      <button mat-raised-button routerLink="/login">Back To Log In</button>
+    </mat-card-content>
+    <mat-card-footer>
+    </mat-card-footer>
+  </mat-card>
+{%- endraw %}

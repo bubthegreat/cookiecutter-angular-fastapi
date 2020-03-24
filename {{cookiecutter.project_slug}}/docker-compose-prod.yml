@@ -1,0 +1,60 @@
+version: '3'
+
+services:
+    # Fast API service
+    {{cookiecutter.api_slug}}:
+        image: {{cookiecutter.api_slug}}
+        build:
+            context: ./{{ cookiecutter.python_slug }}
+            dockerfile: Dockerfile
+        ports:
+            - {{cookiecutter.api_port}}
+
+    # Angular service
+    {{cookiecutter.angular_slug}}:
+        image: {{ cookiecutter.angular_slug }}
+        build:
+            context: ./{{ cookiecutter.angular_slug }}
+            dockerfile: Dockerfile
+        deploy:
+            labels:
+                - "traefik.enable=true"
+                - "traefik.http.routers.whoami.rule=Host(`{{ cookiecutter.angular_slug }}.{{ cookiecutter.domain }}`)"
+                - "traefik.http.routers.whoami.entrypoints=web"
+
+        ports:
+            - 80
+
+    # Redis service for redis things.
+    {{ cookiecutter.redis_hostname }}:
+        image: redis
+        ports:
+            - 6379
+        volumes:
+            - {{ cookiecutter.redis_volume }}:/data
+
+    # MySQL service for redis things.
+    {{ cookiecutter.mysql_hostname }}:
+        image: redis
+        environment:
+            - MYSQL_ROOT_PASSWORD={{ cookiecutter.mysql_root_password }}
+            - MYSQL_DATABASE={{ cookiecutter.mysql_database }}
+            - MYSQL_USER={{ cookiecutter.mysql_user }}
+            - MYSQL_PASSWORD={{ cookiecutter.mysql_password }}
+        ports:
+            - 3306
+        volumes:
+            - {{ cookiecutter.mysql_volume }}:/data
+
+    # Postgres service for postgres things.
+    {{ cookiecutter.postgres_hostname }}:
+        image: postgres
+        ports:
+            - 5432
+        volumes:
+            - {{ cookiecutter.postgres_volume }}:/var/lib/postgresql
+
+volumes:
+    {{ cookiecutter.redis_volume }}:
+    {{ cookiecutter.postgres_volume }}:
+    {{ cookiecutter.mysql_volume }}:

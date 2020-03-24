@@ -1,6 +1,15 @@
+black
 fastapi
+isort
+mypy
+passlib[bcrypt]
 pytest
-pydantic
+pytest-xdist
+pytest-cov
+pylint
+pydocstyle
+pyjwt
+python-multipart
 redis
+requests
 uvicorn
-email-validator
