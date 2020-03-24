@@ -18,6 +18,7 @@ It looks like this if we did it right!
 * Implement email notifications
 * Update docker files to reflect relity now
 * Update the gitlab CI/CD
+* Implement a chat feature that utilizes sockets and the backend DB
 
 
 
