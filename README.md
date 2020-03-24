@@ -6,8 +6,20 @@ It looks like this if we did it right!
 ![Frontend](assets/frontend.png)
 
 ## TODOS
-* Implement authentication with JWT
-* Implement security.
+* ~~Implement authentication with JWT~~ DONE!!!
+* Implement async ORM with ponyorm for models
+* Implement a real database (postgres to start)
+* Implement redis for session management
+* Implement a real user registration API
+* Implement a real superuser registration when none exist
+* Implement a user management frontend and API
+* Implement one example of a migration of models using Alembic
+* Implement celery/flower workers
+* Implement email notifications
+* Update docker files to reflect relity now
+* Update the gitlab CI/CD
+
+
 
 ### Angular Frontend
 The angular frontend has a few things already defined that should serve as good reference starting points:
@@ -70,7 +82,7 @@ PS C:\Users\bubth\Development\test>
 
 ## Backend
 
-Our API backend is FastAPI, which does automatic swagger docs for you!  Swagger docs will be available at http://{{cookiecutter.domain}}:{{cookiecutter.api_port}}/docs when running on your {{cookiecutter.domain}} so you can see what they look like.
+Our API backend is FastAPI, which does automatic swagger docs for you!  Swagger docs will be available at http://localhost:8000/docs when running on your localhost so you can see what they look like.
 
 ### Installing the backend
 
@@ -91,14 +103,14 @@ Processing c:\users\bubth\development\test\angular-fastapi\api_angular_fastapi
 To run the backend API, you should be able to run the app.py:
 
 ```
-(venv) PS C:\Users\bubth\Development\test\angular-fastapi\api_angular_fastapi> python .\test1_backend\app.py
+(venv) PS C:\Users\bubth\Development\test\angular-fastapi\api_angular_fastapi> start_api_server
 INFO: Uvicorn running on http://0.0.0.0:{{cookiecutter.api_port}} (Press CTRL+C to quit)
 INFO: Started reloader process [11436]
 INFO: Started server process [2248]
 INFO: Waiting for application startup.
 ```
 
-If you navigate to http://{{cookiecutter.domain}}:{{cookiecutter.api_port}}/status you should get something similar to this:
+If you navigate to http://localhost:8000/status you will get auth errors until you log in, but after authenticating you should get something similar to this:
 
 `{"status":"UP","uptime":"52s","server_time":"2019-10-05 23:27:54.505806"}`
 
@@ -121,5 +133,5 @@ To run the frontend, you'll run the command:
 
 `ng serve`
 
-from the frontend directory.  If you navigate to http://{{cookiecutter.domain}}:4200 you should see a generic welcome page!  If you've started the backend first in the order it's described here, you should see a welcome page that pulls the backend server status and updates with some minor angular material styling.
+from the frontend directory.  If you navigate to http://localhost:4200 you should see a generic welcome page!  If you've started the backend first in the order it's described here, you should see a welcome page that pulls the backend server status and updates with some minor angular material styling.
 
